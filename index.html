@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dhund — Fog-Safe Travel Planner (UX Concept)</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="topbar">
+  <div class="brand"><span class="logo">D</span> Dhund</div>
+  <p class="tagline">Fog-Safe Travel Planner · Punjab &amp; KP Motorways · UX Concept</p>
+</header>
+
+<div class="notice" role="note">
+  <strong>Unofficial UX concept — sample data only.</strong>
+  Every visibility figure and status shown here is invented sample data for
+  demonstrating the design. Dhund is not a live traffic service and is not
+  connected to any motorway authority. Never decide a real journey on this demo
+  — always check an official source before travelling.
+</div>
+
+<main>
+  <section aria-label="Visibility dashboard">
+    <h2>Visibility tonight</h2>
+    <p class="muted">By motorway section. Open &gt; 200m · Caution 50–200m · Closed &lt; 50m.</p>
+    <label for="status-filter">Filter by status</label>
+    <select id="status-filter">
+      <option value="All">All sections</option>
+      <option value="Open">Open</option>
+      <option value="Caution">Caution</option>
+      <option value="Closed">Closed</option>
+    </select>
+    <p id="section-count" class="muted"></p>
+    <div id="section-list"></div>
+  </section>
+
+  <section aria-label="Safe departure planner">
+    <h2>Should I leave now?</h2>
+    <p class="muted">Pick a route and a departure time for a plain GO / DELAY verdict.</p>
+    <label for="route-select">Route</label>
+    <select id="route-select"></select>
+    <label for="departure-time">Departure time</label>
+    <input id="departure-time" type="time" value="07:00">
+    <button id="plan-btn" class="btn">Check my departure</button>
+    <div id="verdict-card" class="card" hidden>
+      <p class="label">VERDICT</p>
+      <p class="big" id="verdict-text"></p>
+      <p id="verdict-reason"></p>
+      <p id="verdict-window" class="muted"></p>
+    </div>
+  </section>
+
+  <section aria-label="Fog-driving guide">
+    <h2>Drive safe in fog</h2>
+    <p class="muted">Four rules before you start the car.</p>
+    <ol id="guide-list" class="guide"></ol>
+  </section>
+
+  <section aria-label="Emergency kit checklist">
+    <h2>Emergency kit — tick before you go</h2>
+    <p class="muted">Your ticks are saved on this device only.</p>
+    <div id="kit-list"></div>
+    <p id="kit-progress" class="muted"></p>
+    <button id="kit-reset-btn" class="btn secondary">Clear kit checklist</button>
+  </section>
+</main>
+
+<footer>
+  <p>Dhund is an unofficial UX concept built for learning. All data is sample data.</p>
+  <p>Designed and built by Abbas Momand · <a href="mailto:abbasmomand98@gmail.com">abbasmomand98@gmail.com</a></p>
+</footer>
+
+<script src="data.js"></script>
+<script src="logic.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
